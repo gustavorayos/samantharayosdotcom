@@ -4,7 +4,7 @@ function myFunction() {
     (x.className.indexOf('w3-show') == -1) {
         x.className += ' w3-show';
     } else {
-            x.className = x.className.replace(' w3-show', '');
+        x.className = x.className.replace(' w3-show', '');
     }
 }
 // When the user scrolls the page, execute stickyBar 
@@ -43,7 +43,7 @@ function openCity(cityName) {
     var i;
     var x = document.getElementsByClassName("city");
     for (i = 0; i < x.length; i++) {
-        x[i].style.display = "none"; 
+        x[i].style.display = "none";
     }
-    document.getElementById(cityName).style.display = "block"; 
+    document.getElementById(cityName).style.display = "block";
 }
