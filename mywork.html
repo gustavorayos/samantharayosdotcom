@@ -1,0 +1,1014 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Samantha Rayos</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+    <link href="https://fonts.googleapis.com/css?family=Dancing+Script" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Great+Vibes" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Permanent+Marker" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Shadows+Into+Light" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=IBM+Plex+Sans" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Bangers" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Satisfy" rel="stylesheet">
+    <script src="main.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+</head>
+
+<body>
+    <style>
+        body,
+        html,
+        .main,
+        h1,
+        h2,
+        h5,
+        p {
+            /*font-family: 'Dancing Script', cursive;*/
+            /*font-family: 'Permanent Marker', cursive;*/
+            font-family: 'Satisfy', cursive;
+
+            height: 100%;
+        }
+
+        p {
+            font-size: 27px;
+        }
+
+        h1 {
+            font-size: 40px;
+        }
+
+        .bg-div-height-500 {
+            /* The image used */
+            background-image: url('https://images.unsplash.com/photo-1513229362952-f80b95a1a3cd?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=d7b7777fa85212abd1ee488199181072&auto=format&fit=crop&w=2550&q=80');
+            /* Full height */
+            height: 500px;
+            width: 100%;
+            /* Center and scale the image nicely */
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+
+        #bg-fill-container {
+            border: 0px solid black;
+            padding: 0px;
+            background-image: url('https://images.unsplash.com/photo-1499951360447-b19be8fe80f5?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=d1046925db0fb1f15417d71ad1676880&auto=format&fit=crop&w=1650&q=80');
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+
+        .bg-parallax {
+            /* The image used */
+            background-image: url('https://images.unsplash.com/photo-1523257813706-ff6e594e4880?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=f69bc772e5bbb394cacf5d74bc4c3482&auto=format&fit=crop&w=2550&q=80');
+            /* Full height */
+            /* Create the parallax scrolling effect */
+            background-attachment: fixed;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+
+        .sidenav {
+            height: 100%;
+            width: 0;
+            position: fixed;
+            z-index: 1;
+            top: 0;
+            left: 0;
+            background-color: rgb(199, 199, 199);
+            overflow-x: hidden;
+            transition: 0.5s;
+            padding-top: 60px;
+        }
+
+        .sidenav a {
+            padding: 8px 8px 8px 32px;
+            text-decoration: none;
+            font-size: 25px;
+            color: #000;
+            display: block;
+            transition: 0.3s;
+        }
+
+        .sidenav a:hover {
+            color: #f1f1f1;
+        }
+
+        .sidenav .closebtn {
+            position: absolute;
+            top: 0;
+            right: 25px;
+            font-size: 36px;
+            margin-left: 50px;
+        }
+
+        #main {
+            transition: margin-left .5s;
+        }
+
+        @media screen and (max-height: 450px) {
+            .sidenav {
+                padding-top: 15px;
+            }
+            .sidenav a {
+                font-size: 18px;
+            }
+        }
+
+        /*Classes used to animate objects*/
+
+        .w3-animate-hover-zoom:hover {
+            -ms-transform: scale(1.5);
+            /* IE 9 */
+            -webkit-transform: scale(1.5);
+            /* Safari 3-8 */
+            transform: scale(1.5);
+        }
+
+        .w3-animate-pulse {
+            margin: 0px;
+            display: block;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: #cca92c;
+            cursor: pointer;
+            box-shadow: 0 0 0 rgba(204, 169, 44, 0.4);
+            animation: w3-animate-pulse 2s infinite;
+        }
+
+        .w3-animate-pulse:hover {
+            -ms-transform: scale(1.5);
+            /* IE 9 */
+            -webkit-transform: scale(1.5);
+            /* Safari 3-8 */
+            transform: scale(1.5);
+        }
+
+        @-webkit-keyframes w3-animate-pulse {
+            0% {
+                -webkit-box-shadow: 0 0 0 0 rgba(204, 169, 44, 0.4);
+            }
+            70% {
+                -webkit-box-shadow: 0 0 0 10px rgba(204, 169, 44, 0);
+            }
+            100% {
+                -webkit-box-shadow: 0 0 0 0 rgba(204, 169, 44, 0);
+            }
+        }
+
+        @keyframes w3-animate-pulse {
+            0% {
+                -moz-box-shadow: 0 0 0 0 rgba(204, 169, 44, 0.4);
+                box-shadow: 0 0 0 0 rgba(204, 169, 44, 0.4);
+            }
+            70% {
+                -moz-box-shadow: 0 0 0 10px rgba(204, 169, 44, 0);
+                box-shadow: 0 0 0 10px rgba(204, 169, 44, 0);
+            }
+            100% {
+                -moz-box-shadow: 0 0 0 0 rgba(204, 169, 44, 0);
+                box-shadow: 0 0 0 0 rgba(204, 169, 44, 0);
+            }
+        }
+
+        /*Custom backgrounds used to add opacity to backgrounds without affecting text*/
+
+        .first {
+            background: rgba(255, 255, 255, 0.3);
+        }
+
+        .second {
+            background: rgba(255, 255, 255, 0.6);
+        }
+
+        .third {
+            background: rgba(255, 255, 255, 0.9);
+        }
+
+        .fourth {
+            background: rgba(0, 0, 0, 0.5);
+        }
+
+        .fifth {
+            background: rgba(0, 0, 0, 0);
+        }
+
+        /*Classes used to modify buttons*/
+
+        .roundButton {
+            background-color: #ffffff;
+            border: none;
+            color: black;
+            padding: 16px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 22px;
+            margin: 0px 0px;
+        }
+
+        .roundButton1 {
+            border-radius: 0px;
+        }
+
+        .roundButton2 {
+            border-radius: 4px;
+        }
+
+        .roundButton3 {
+            border-radius: 8px;
+        }
+
+        .roundButton4 {
+            border-radius: 12px;
+        }
+
+        .roundButton5 {
+            border-radius: 50%;
+        }
+
+        .w3-top2,
+        .w3-bottom2 {
+            position: absolute;
+            width: 100%;
+            z-index: 1
+        }
+
+        .w3-top2 {
+            top: 0
+        }
+
+        .w3-bottom2 {
+            bottom: 0
+        }
+
+        a {
+            text-decoration: none
+        }
+
+        #main-content-bottom-margin {
+            margin-bottom: 96px;
+            /*This may to be adjusted depending on the content of your footer*/
+        }
+
+        #footer {
+            width: 100%;
+            position: fixed;
+            left: 0;
+            bottom: 0;
+            z-index: -3;
+            height: auto;
+        }
+
+        /* Style the tab */
+
+        .tab {
+            overflow: hidden;
+            border: 0px solid #F6F4C2;
+            background-color: #f1f1f1;
+        }
+
+        /* Style the buttons inside the tab */
+
+        .tab button {
+            background-color: inherit;
+            float: left;
+            border: none;
+            outline: none;
+            cursor: pointer;
+            padding: 14px 16px;
+            transition: 0.3s;
+            font-size: 17px;
+        }
+
+        /* Change background color of buttons on hover */
+
+        .tab button:hover {
+            background-color: #fff;
+        }
+
+        /* Create an active/current tablink class */
+
+        .tab button.active {
+            background-color: #F6F4C2;
+        }
+
+        /* Style the tab content */
+
+        .tabcontent {
+            display: none;
+            padding: 0px 0px;
+            -webkit-animation: fadeEffect 1s;
+            animation: fadeEffect 1s;
+        }
+
+        /* Fade in tabs */
+
+        @-webkit-keyframes fadeEffect {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        @keyframes fadeEffect {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        .navbarWidth {
+            max-width: 1200px;
+            margin: auto
+        }
+
+        .navbarWidthLarge {
+            max-width: 1300px;
+            margin: auto !important
+        }
+    </style>
+<div id="mySidenav" class="sidenav">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+        <a href="/Users/gustavorayos/Desktop/Visual Studio Projects/Samantha Rayos/index.html">Home</a>
+        <a href="/Users/gustavorayos/Desktop/Visual Studio Projects/Samantha Rayos/about.html">About Me</a>
+        <a href="/Users/gustavorayos/Desktop/Visual Studio Projects/Samantha Rayos/mywork.html">My Work</a>
+        <a href="/Users/gustavorayos/Desktop/Visual Studio Projects/Samantha Rayos/contact.html">Contact Me</a>
+        <a href="#">Blog</a>
+      </div>
+
+    <div id="main">
+
+
+
+
+
+
+
+        <div id='home' class='bg-div-height-500 w3-opacity-max'>
+        </div>
+
+        <div class='w3-display-container w3-top2' style='height:500px;'>
+
+
+            <div class='w3-display-middle w3-padding-large'>
+                <img alt='Avatar' class='w3-circle' src='https://2.bp.blogspot.com/-DIOvhZMyknc/WwYnXN747RI/AAAAAAAALcQ/1GlxEk1bhpkSp2dKtnbh8I9i1PYPNrOlACLcBGAs/s1600/Samantha_Avatar.png'
+                    style='width:250px;height:250px' />
+            </div>
+            <!--Large Screen Slider Text-->
+            <div class='w3-display-bottomleft w3-hide-small w3-hide-medium w3-center'>
+                <p class='w3-padding-large w3-text-yellow'>
+                    <span style='font-size:90px;font-weight:bold;'>
+                        My work.
+                    </span>
+                </p>
+            </div>
+            <div class='w3-display-bottommiddle w3-padding-24'>
+                <a href='#aboutme'>
+                    <div class='w3-btn-floating w3-white w3-animate-pulse'>
+                        <i class='w3-xlarge fa fa-arrow-down'></i>
+                    </div>
+                </a>
+            </div>
+        </div>
+
+        <div class='w3-center w3-top2 w3-text-yellow w3-hide-small' style='margin-top:12px;'>
+            <span style='font-size:70px;'>Samantha Rayos</span>
+        </div>
+
+        <div class='w3-center w3-top2 w3-text-yellow w3-hide-large w3-hide-medium' style='margin-top:12px;'>
+            <span style='font-size:40px;'>Samantha Rayos</span>
+        </div>
+
+
+        <div style='margin-top:60px;margin-left:60px;' class='w3-top w3-hide-small w3-hide-medium'>
+ 
+                <div onclick="openNav()" class='w3-btn-floating w3-white w3-animate-pulse' style='width:100px;height:100px;'>
+                  <i style='position: relative;
+                  top: 50%;
+                  transform: translateY(-55%);font-size: 50px;' class='fa fa-bars'></i>
+                </div>
+        
+            </div>
+        
+            <div style='margin-top:100px;margin-left:20px;' class='w3-top w3-hide-small w3-hide-large'>
+         
+                <div onclick="openNav()" class='w3-btn-floating w3-white w3-animate-pulse' style='width:70px;height:70px;'>
+                  <i style='position: relative;
+                  top: 50%;
+                  transform: translateY(-55%);font-size: 40px;' class='fa fa-bars'></i>
+                </div>
+        
+            </div>
+        
+            <div style='margin-top:100px;margin-left:20px;' class='w3-top w3-hide-medium w3-hide-large'>
+         
+                <div onclick="openNav()" class='w3-btn-floating w3-white w3-animate-pulse' style='width:45px;height:45px;'>
+                  <i style='position: relative;
+                  top: 50%;
+                  transform: translateY(-55%);font-size: 30px;' class='fa fa-bars'></i>
+                </div>
+        
+            </div>
+
+
+
+
+        <!--<div class='w3-light-gray w3-padding-32 w3-padding-large w3-text-black' id='aboutme'>
+            <div class='w3-content w3-center w3-padding-16'>
+                <h1 class='w3-center w3-padding-large'>
+                    <span style='font-weight:bold'>
+                        My name is Samantha Rayos.
+                    </span>
+                </h1>-->
+                <!--Hide three pictures on small and medium screens-->
+                <!--<div class='w3-hide-small w3-hide-medium' style='margin-bottom: 320px;'>
+                    <div class='w3-third w3-padding-large'>
+                        <img alt='Avatar' class='w3-circle' src='https://3.bp.blogspot.com/--LTV_j1QUJc/WxQ3ZCyqvhI/AAAAAAAAFvg/XxhKM9PEdnoXfY9F9pSKwvkatIyj_2BuwCLcBGAs/s1600/IMG_0410.jpg'
+                            style='width:250px;height:250px' />
+                    </div>
+                    <div class='w3-third w3-padding-large'>
+                        <img alt='Avatar' class='w3-circle' src='https://2.bp.blogspot.com/-d-qQxB2DoQw/WxQ3DHiZd_I/AAAAAAAAFvY/L2bPoP8F-XUpWR8y2B5CypcTYOh4LQz0QCLcBGAs/s1600/IMG_0699.JPG'
+                            style='width:250px;height:250px' />
+                    </div>
+                    <div class='w3-third w3-padding-large'>
+                        <img alt='Avatar' class='w3-circle' src='https://4.bp.blogspot.com/-S11NlSnxOV0/WwXwj_SANSI/AAAAAAAALbE/HU7MqA8ietMhFriJPr-LNbX6GehxxfuZgCLcBGAs/s1600/IMG_0219.JPG'
+                            style='width:250px;height:250px' />
+                    </div>
+                </div>
+                <div class='w3-hide-large w3-padding-large'>
+                    <img alt='Avatar' class='w3-circle' src='https://3.bp.blogspot.com/-BqLsEy45rd4/WwXrT4lTdrI/AAAAAAAALac/Uzhn4IC5jl08nQ5DWgu3fjvm2K_Rqbk1ACLcBGAs/s1600/IMG_0615.JPG'
+                        style='width:250px;height:250px' />
+                </div>
+                <p class='w3-center'>
+                    Hi all, my name is Goose Rayos. I do website design. Feel free to browse through my examples of what I can provide for your
+                    business or personal site. Let me know if you have any questions!
+                </p>
+                <p class='w3-center'>
+                    I work as a Systems Administrator and have a degree in Computer Science from New Mexico State University. My interests include
+                    technology, sports, music, fitness, traveling, the outdoors, and more. I am based in Texas, but I enjoy
+                    exploring the globe whenever possible.
+                </p>
+            </div>
+        </div>-->
+
+
+        <div class='w3-light-gray'>
+            <div style='background-color: #fde396;' class="tab">
+                <div>
+                    <button style='width:33.3%' class="tablinks w3-text-black " onclick="openCity(event, 'London')" id="defaultOpen">
+                        <span style='font-size: 26px;'>Resume</span>
+                    </button>
+                    <button style='width:33.3%' class="tablinks w3-text-black " onclick="openCity(event, 'Paris')">
+                        <span style='font-size: 26px;'>Cover Letter</span>
+                    </button>
+                    <button style='width:33.3%' class="tablinks w3-text-black " onclick="openCity(event, 'Tokyo')">
+                        <span style='font-size: 26px;'>Reviews</span>
+                    </button>
+                </div>
+            </div>
+
+
+            <div class='w3-center'>
+                <div id="London" class="tabcontent">
+                    <div class='w3-padding-32 w3-padding-large w3-text-black' style='background-color: #F6F4C2;' id='aboutme'>
+                        <div class='w3-content w3-center w3-padding-16'>
+                            <h1 class='w3-center w3-padding-large'>
+                                <span style='font-weight:bold'>Resume</span>
+                                <p>Thank you for you're interest. Download my resume as many times as you'd like.</p>
+
+                                <a href='https://drive.google.com/open?id=1XqnTpDvcVSSx0LRSj11XFkVgm-_O1_UX'>
+                                  <roundButton class='roundButton roundButton1 w3-black w3-hover-white w3-padding-small'>
+                                    Download Resume
+                                  </roundButton>
+                                </a>
+                                </div>
+
+
+                    </div>
+                    <div class='bg-parallax'>
+                        <span style='font-family:Times New Roman, Times, serif; font-size: 20px;'>
+                        <div class='w3-padding-32 w3-padding-large w3-text-black' id='aboutme'>
+                            <div class='third w3-content w3-left-align'>
+                
+                                            <div class='w3-black w3-padding-small w3-center'>
+                                              <h1 style='font-family: Times New Roman, Times, serif; font-size: 40px; font-weight: bold;'>
+                                                Samantha Rayos
+                                              </h1>
+                                            </div>
+                                            <div class='w3-container'>
+                                              <p class='w3-text-black'>
+                                                <h2 style='font-family: Times New Roman, Times, serif; font-size: 30px; font-weight: bold;'>
+                                                  About
+                                              </h2>
+                                              I bring drive ambition, flexibility, and a passion for projects as well as day-to-day management to professional environments. My fascination with learning fuels my initiative to work hard, attention to detail, and need to make a difference.
+                                              <h2 style='font-family: Times New Roman, Times, serif; font-size: 30px; font-weight: bold;'>
+                                                <br/>
+                                                Education
+                                              </h2>
+                                              <h4>
+                                                Bachelor of Business Administration, Marketing
+                                                West Texas AandM University
+                                                <br/>
+                                                Expected Graduation May 2018
+                                              </h4>
+                                              GPA 3.45
+                                              <h4>
+                                                <br/>
+                                                Associate in Pre-Business, Certificate in Business Fundamentals
+                                                New Mexico State University
+                                                <br/>
+                                                Graduated May 2016
+                                              </h4>
+                                              GPA 3.50
+                                              <h2 style='font-family: Times New Roman, Times, serif; font-size: 30px; font-weight: bold;'>
+                                                <br/>
+                                                Work Experience
+                                              </h2>
+                                              <h3>
+                                                Cornette Library Aide | West Texas AandM University | Canyon, TX
+                                                <br/>
+                                                September 2016 - Present
+                                              </h3>
+                                              &#8226; Assists in monitoring office supplies and logging inventory for record keeping 
+                                              <br/>
+                                             &#8226; Efficiently maintain reports, forms and records while providing accurate data entry
+                                              <br/>
+                                             &#8226; Collaborate with workers to engage students to participate in internal activities
+                                              <br/>
+                                             &#8226; Accountable for items shipped according to university requirements
+                                              <br/>
+                                             &#8226; Responsible for maintaining knowledge of policies
+                                              <br/>
+                                              <h3>
+                                                <br/>
+                                                Managerial Internship | Sam&#39;s Club | Amarillo, TX
+                                                <br/>
+                                                May 2017 - August 2017
+                                              </h3>
+                                             &#8226; Researched methods to increase donations by developing and implementing a marketing plan for Children&#39;s Miracle Network
+                                              <br/>
+                                             &#8226; Increased business membership by identifying relevant local businesses and marketing to them to sign-up for business memberships
+                                              <br/>
+                                             &#8226; Collaborated a team environment
+                                              <br/>
+                                              <h3>
+                                                <br/>
+                                                Billing Specialist | New Mexico State University Skeen Hall | Las Cruces, NM
+                                                <br/>
+                                                August 2014 - August 2015
+                                              </h3>
+                                             &#8226; Assisted in ordering office supplies as needed
+                                              <br/>
+                                             &#8226; Completed work accurately, in a timely manner with great attention to detail
+                                              <br/>
+                                             &#8226; Coordinated meeting rooms with required materials as well as food and beverages
+                                              <br/>
+                                             &#8226; Identified problems, risks, and issues, mediated and developed solutions and implemented a course of action
+                                              <br/>
+                                              <h3>
+                                                <br/>
+                                                Office Manager | Asap Process Service | Las Cruces, NM
+                                                <br/>
+                                                January 2010 - January 2012
+                                              </h3>
+                                             &#8226; Distributed work assignments and assured each employee has the resources to complete their job
+                                              <br/>
+                                             &#8226; Assured quality control of data entry of sensitive information
+                                              <br/>
+                                             &#8226; Tracked progress of workflow
+                                              <br/>
+                                             &#8226; Served as the main point of contact for all internal and external office related questions
+                                              <br/>
+                                              <h2 style='font-family: Times New Roman, Times, serif; font-size: 30px; font-weight: bold;'>
+                                                <br/>
+                                                Achievements
+                                              </h2>
+                                             &#8226; I led a team to develop a local small Amarillo business to aid in reaching their business goals. We utilized Google Analytics to conduct market research and created quantitative data from people in the local area that backed our presentation to store owners and received favorable feedback. 
+                                              <br/>
+                                             &#8226; During a group project to compare market competition between Dell, Compaq, HP, and IBM to determine how Dell might fulfill, a neglected segment I was recognized for taking extra steps to achieve more accuracy. 
+                                              <br/>
+                                              <h2 style='font-family: Times New Roman, Times, serif; font-size: 30px; font-weight: bold;'>
+                                                <br/>
+                                                Volunteer and Community Involvement
+                                              </h2>
+                                             &#8226; Presenter on &quot;No Excuses&quot;, Willis Elementary School, Amarillo, TX
+                                              September 2017
+                                              <br/>
+                                             &#8226; Co-builder of structure to provide shade for dogs, American Society for the ASPCA
+                                              May 2016
+                                              <br/>
+                                              <h2 style='font-family: Times New Roman, Times, serif; font-size: 30px; font-weight: bold;'>
+                                                <br/>
+                                                Activities, Honors, and Awards
+                                              </h2>
+                                              <h3>
+                                                Honors and Awards
+                                              </h3>
+                                             &#8226; American Marketing Association - Outstanding Organization Finalist 2016 - 2017
+                                              <br/>
+                                             &#8226; American Marketing Association - Outstanding Internal/External Communications 2016 - 2017
+                                              <br/>
+                                             &#8226; Sam&#39;s Club - Intern of the Year honorable mention for 2017
+                                              <br/>
+                                             &#8226; Alpha Mu Alpha Nomination 2018
+                                              <br/>
+                                             &#8226; Dean&#39;s list recognition at West Texas AandM University
+                                              <br/>
+                                             &#8226; American Marketing Association Leadership Award 2018
+                                              <br/>
+                                              <h3>
+                                                <br/>
+                                                Activities
+                                              </h3>
+                                              <h4>
+                                                American Marketing Association West Texas AandM Chapter
+                                                President
+                                                <br/>
+                                                May 2017 - Present
+                                              </h4>
+                                             &#8226; Developed and submitted a strategic plan to identify actions and strategies for the organization&#39;s upcoming year
+                                              <br/>
+                                             &#8226; Marketed the organization through advertising on campus by developing eye-catching flyers and campus television announcements
+                                              <br/>
+                                             &#8226; Led the team to entice successful, community leaders to make presentation in twelve seminars about business related fields in the Amarillo area
+                                              <br/>
+                                              <h4>
+                                                <br/>
+                                                National Society of Leadership and Success
+                                                Member
+                                                <br/>
+                                                August 2017 - Present
+                                              </h4>
+                                             &#8226; Trained in leadership skills
+                                              <br/>
+                                              <h4>
+                                                <br/>
+                                                Beta Gamma Sigma 
+                                                Member
+                                                <br/>
+                                                April 2016 - Present
+                                              </h4>
+                                              <h2 style='font-family: Times New Roman, Times, serif; font-size: 30px; font-weight: bold;'>
+                                                <br/>
+                                                Professional Skills
+                                              </h2 style='font-family: Times New Roman, Times, serif; font-size: 30px; font-weight: bold;'>
+                                             &#8226; Microsoft Office Apps: Expert
+                                              <br/>
+                                             &#8226; Google Apps: Proficient
+                                              <br/>
+                                             &#8226; Photoshop and Lightroom: Competent
+                                              <br/>
+                                             &#8226; Google Analytics: Competent
+                                              <br/>
+                                             &#8226; Market research: Competent
+                                              <br/>
+                                             &#8226; Records Management: Competent
+                                              <br/>
+                                             &#8226; Excel 2016 Certified
+                                              <br/>
+                                              <h2 style='font-family: Times New Roman, Times, serif; font-size: 30px; font-weight: bold;'>
+                                                <br/>
+                                                Personal Skills
+                                              </h2>
+                                             &#8226; Drive and ambition
+                                              <br/>
+                                             &#8226; Organization
+                                              <br/>
+                                             &#8226; Strong Communication
+                                              <br/>
+                                             &#8226; Problem solver
+                                              <br/>
+                                             &#8226; Flexibility
+                                              <br/>
+                                             &#8226; Proactive
+                                              <br/>
+                                             &#8226; Team player
+                                              <br/>
+                                             &#8226; Time Management
+                                              <br/>
+                                             &#8226; Confidentiality
+                                              <br/>
+                                              <h2 style='font-family: Times New Roman, Times, serif; font-size: 30px; font-weight: bold;'>
+                                                <br/>
+                                                Contact
+                                              </h2>
+                                              Phone: 575-312-7209 
+                                              <br/>
+                                              Email: samanthaorayos@gmail.com
+                                              <br/>
+                                              <h2 style='font-family: Times New Roman, Times, serif; font-size: 30px; font-weight: bold;'>
+                                                <br/>
+                                                Social
+                                              </h2>
+                                              www.linkedin.com/in/samanthaorayos
+                                              <br/>
+                                              <br/>
+                                              <br/>
+                                            </p>
+                                          </div>
+                                    
+
+
+                            </div>
+                        </div>
+                    </span>
+
+                       
+                    </div>
+                    </div>
+
+
+                    <div id="Paris" class="tabcontent">
+                            <div class='w3-padding-32 w3-padding-large w3-text-black' style='background-color: #F6F4C2;'>
+                                    <div class='w3-content w3-center w3-padding-16'>
+                                        <h1 class='w3-center w3-padding-large'>
+                                            <span style='font-weight:bold'>Cover Letter</span>
+                                            <p>Let me tell you a little bit more about myself.</p>
+                                    </div>
+                                </div>
+                                <div class='bg-parallax'>
+                                    <div class='w3-padding-32 w3-padding-large w3-text-black' id='aboutme'>
+                                            <div class='w3-black w3-padding-small w3-center w3-content'>
+                                                    <h1 style='font-family: Times New Roman, Times, serif; font-size: 40px; font-weight: bold;'>
+                                                      Samantha Rayos
+                                                    </h1>
+                                                  </div>
+                                        <div class='third w3-content w3-left-align w3-padding-large'>
+ 
+                                            <p style='font-family:Times New Roman, Times, serif; font-size: 20px;'>    
+                                            To whom it may concern,
+                                            </p>
+                                            <p style='font-family:Times New Roman, Times, serif; font-size: 20px;'>
+                                                I am interested in being a great asset to your company. I have the ability to be a great fit for any company. In May 2018 I graduated with my Bachelors in Marketing from West Texas A&M University and look forward to starting a career in marketing.
+                                                My educational background has effectively prepared me for the business field. My internship at Sam’s Club has enabled me to refine my workplace skills and has also allowed me to get a feel of “real life” situations dealing with people while effectively communicating with colleagues and customers. Customer service at my previous jobs was always implemented and has allowed me to connect the teachings from West Texas A&M University to a professional environment.
+                                            </p>
+                                            <p style='font-family:Times New Roman, Times, serif; font-size: 20px;'>
+                                                In addition to marketing and business experiences, my past office experiences have proven to be a valuable asset as I plan for the future. I enjoy many aspects of the office culture such as collaborating with colleagues, coordinating activities, and contributing to marketing studies. As my enclosed resume indicates, I have experience in various office related environments which I believe could lead to a great fit for your company.
+                                            </p>
+                                            <p style='font-family:Times New Roman, Times, serif; font-size: 20px;'>
+                                                I hope to hear from you soon. Thank you for your time and consideration.
+                                            </p>
+                                            <p style='font-family:Times New Roman, Times, serif; font-size: 20px;'>
+                                                Sincerely, <br/>
+                                                Samantha O. Rayos
+                                            </p>
+            
+                                        </div>
+                                    </div>
+
+  
+
+
+                                </div>
+                            </div>
+
+                    <div id="Tokyo" class="tabcontent">
+                            <div class='w3-padding-32 w3-padding-large w3-text-black' style='background-color: #F6F4C2;'>
+                                    <div class='w3-content w3-center w3-padding-16'>
+                                        <h1 class='w3-center w3-padding-large'>
+                                            <span style='font-weight:bold'>Reviews</span></h1>
+                                            <p>See what people have to say about me.</p>
+                                    </div>
+                                </div>
+                                <div class='bg-parallax'>
+                                    <div class='w3-padding-32 w3-padding-large w3-text-black' id='aboutme'>
+                                        <div class='third w3-content w3-center w3-padding-large'>
+                                              <img alt='Avatar' class='w3-circle w3-margin-right' src='https://2.bp.blogspot.com/-DIOvhZMyknc/WwYnXN747RI/AAAAAAAALcQ/1GlxEk1bhpkSp2dKtnbh8I9i1PYPNrOlACLcBGAs/s1600/Samantha_Avatar.png' style='width:80px; margin-top:20px;'/>
+                                              <p >
+                                                <span style='font-family: Times New Roman, Times, serif;' class='w3-large w3-margin-right'>
+                                                  Samantha Rayos.
+                                                  West Texas A &amp; M Graduate.
+                                                
+                                              </p>
+                                              <p style='font-family: Times New Roman, Times, serif;'>
+                                                &quot;Gustavo helped me create a site I can show to potential employers during my job search. Very professional.&quot;
+                                              </p>
+                                              <br/>
+                                              <img alt='Avatar' class='w3-circle w3-margin-right' src='https://www.w3schools.com/w3images/bandmember.jpg' style='width:80px'/>
+                                              <p>
+                                                <span style='font-family: Times New Roman, Times, serif;' class='w3-large w3-margin-right'>
+                                                  Brandon Baca.
+                                                  IT at CNS Pantex.
+                                                </span>
+                                              </p>
+                                              <p style='font-family: Times New Roman, Times, serif;'>
+                                                &quot;He helped me create an awesome site!&quot;
+                                              </p>
+            
+            
+                                        </div>
+
+                                </div>
+                    </div>
+                </div>
+            </div> <!--End of light gray background for section-->
+
+
+
+            <!--Footer Code-->
+            <footer class='w3-yellow-soft' id='main-content-bottom-margin'>
+                <div class='w3-container w3-padding-32 w3-text-light-gray w3-center'>
+                    <div class='w3-content second w3-text-black'>
+                        <div class='w3-padding-small'>
+                            <h2>
+
+                                <span style='font-size:38px;'>About Me</span>
+                            </h2>
+                            <img alt='Avatar' class='w3-circle w3-margin-right' src='https://2.bp.blogspot.com/-DIOvhZMyknc/WwYnXN747RI/AAAAAAAALcQ/1GlxEk1bhpkSp2dKtnbh8I9i1PYPNrOlACLcBGAs/s1600/Samantha_Avatar.png'
+                                style='width:80px' />
+                            <p>
+                                <span style='font-size:22px'>
+                                        Hi! My name is Samantha Rayos and welcome to my website. I was born in New Mexico and now live in Texas with my husband and two dogs. I recently graduated from West Texas A&M University and I hope to start my professional career in marketing very soon! My hobbies include baking, cooking, Pinterest inspirations, and more. If you have any questions just shoot me a message on any medium.
+                                </span>
+                            </p>
+                        </div>
+                    </div>
+                    <div class='w3-padding-16 w3-center'>
+
+
+                        <div class='w3-third w3-container w3-text-black'>
+                            <h2 class='w3-text-black'>
+                                <span style='font-size:38px;'>Links</span>
+                            </h2>
+
+                            <p>
+                                    <a class='w3-hover-text-brown' href='/Users/gustavorayos/Desktop/Visual Studio Projects/Samantha Rayos/index.html'>
+                                      Home
+                                    </a>
+                                
+                                  <p>
+                                    <a class='w3-hover-text-brown' href='/Users/gustavorayos/Desktop/Visual Studio Projects/Samantha Rayos/about.html'>
+                                      About Me
+                                    </a>
+                                  </p>
+                                  <p>
+                                      <a class='w3-hover-text-brown' href='/Users/gustavorayos/Desktop/Visual Studio Projects/Samantha Rayos/mywork.html'>
+                                        My Work
+                                      </a>
+                                    </p>
+                                  <p>
+                                          <a class='w3-hover-text-brown' href='/Users/gustavorayos/Desktop/Visual Studio Projects/Samantha Rayos/contact.html'>
+                                            Contact Me
+                                          </a>
+                                        </p>
+          
+                                       <p>
+                                    <a class='w3-hover-text-brown' href='https://samantharayos.blogspot.com'>
+                                      Blog
+                                    </a>
+                                  </p>
+
+
+                        </div>
+                        <div class='w3-third w3-container'>
+                            <h2 class='w3-text-black'>
+                                <span style='font-size:38px;'>Contact Me</span>
+
+                            </h2>
+
+                            <div class='w3-center w3-text-black'>
+
+                                    <div class='w3-padding-small'>
+                                            <i class='w3-xxxlarge fa fa-phone-square'></i><br/>
+                                            <span style='font-size:24px;'>575-312-7209</span><br/>
+                                          </div>
+                                          
+                                          <div class='w3-padding-small'>
+                                            <i class='w3-xxxlarge fa fa-envelope'></i><br/>
+                                            <span style='font-size:24px;'>SamanthaORayos@Gmail.com</span><br/>
+                                          </div>
+          
+                                            <div class='w3-padding-small'>
+                                            <i class='w3-xxxlarge fa fa-road'></i><br/>
+                                            <span style='font-size:24px;'>Amarillo, TX</span>
+                                          </div>
+                            </div>
+
+                        </div>
+                        <div class='w3-third w3-container'>
+                            <h2 class='w3-text-black'>
+                                <span style='font-size:38px;'>Social</span>
+
+                            </h2>
+                            <div class='w3-xxxlarge w3-text-black'>
+                                    <a href='https://www.facebook.com/samantha.o.manjarrez'>
+                                        <i class='fa fa-facebook-official w3-hover-text-indigo'>
+                                        </i>
+                                      </a>
+                                      <a href='https://www.instagram.com/samanthamanjarrez_rayos/'>
+                                        <i class='fa fa-instagram w3-hover-text-pink'>
+                                        </i>
+                                      </a>
+                                      <a href='https://www.pinterest.com/samanthaorayos/'>
+                                        <i class='fa fa-pinterest-p w3-hover-text-red'>
+                                        </i>
+                                      </a>
+                                     <a href='https://www.linkedin.com/in/samanthaorayos/'>
+                                        <i class='fa fa-linkedin w3-hover-text-blue'>
+                                        </i>
+                                      </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </footer>
+            <div class='bg-parallax' id='footer'>
+                <div class='w3-padding-24 w3-center'>
+                    <a href='#home'>
+                        <div class='w3-btn-floating w3-black w3-animate-hover-zoom'>
+                            <i class='w3-xlarge fa fa-arrow-up'></i>
+                        </div>
+                    </a>
+                </div>
+            </div>
+
+
+
+
+
+
+
+
+        </div>
+        <!--End of main id-->
+
+
+
+
+
+        <script>
+            var x = document.getElementById('main');
+            function openNav() {
+                document.getElementById("mySidenav").style.width = "250px";
+                document.getElementById("main").style.marginLeft = "250px";
+            }
+
+            function closeNav() {
+                document.getElementById("mySidenav").style.width = "0";
+                document.getElementById("main").style.marginLeft = "0";
+            }
+        </script>
+        <script>
+            $(document).ready(function () {
+                // Add smooth scrolling to all links
+                $("a").on('click', function (event) {
+
+                    // Make sure this.hash has a value before overriding default behavior
+                    if (this.hash !== "") {
+                        // Prevent default anchor click behavior
+                        event.preventDefault();
+
+                        // Store hash
+                        var hash = this.hash;
+
+                        // Using jQuery's animate() method to add smooth page scroll
+                        // The optional number (800) specifies the number of milliseconds it takes to scroll to the specified area
+                        $('html, body').animate({
+                            scrollTop: $(hash).offset().top
+                        }, 800, function () {
+
+                            // Add hash (#) to URL when done scrolling (default click behavior)
+                            window.location.hash = hash;
+                        });
+                    } // End if
+                });
+            });
+        </script>
+        <script>
+            function openCity(evt, cityName) {
+                var i, tabcontent, tablinks;
+                tabcontent = document.getElementsByClassName("tabcontent");
+                for (i = 0; i < tabcontent.length; i++) {
+                    tabcontent[i].style.display = "none";
+                }
+                tablinks = document.getElementsByClassName("tablinks");
+                for (i = 0; i < tablinks.length; i++) {
+                    tablinks[i].className = tablinks[i].className.replace(" active", "");
+                }
+                document.getElementById(cityName).style.display = "block";
+                evt.currentTarget.className += " active";
+            }
+        </script>
+
+
+        <script>
+            // Get the element with id="defaultOpen" and click on it
+            document.getElementById("defaultOpen").click();
+        </script>
+</body>
+
+</html>

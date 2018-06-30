@@ -1,0 +1,912 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Samantha Rayos</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+    <link href="https://fonts.googleapis.com/css?family=Dancing+Script" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Great+Vibes" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Permanent+Marker" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Shadows+Into+Light" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=IBM+Plex+Sans" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Bangers" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Satisfy" rel="stylesheet">
+    <script src="main.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+</head>
+
+<body>
+    <style>
+        body,
+        html,
+        .main,
+        h1,
+        h2,
+        h5,
+        p {
+            /*font-family: 'Dancing Script', cursive;*/
+            /*font-family: 'Permanent Marker', cursive;*/
+            font-family: 'Satisfy', cursive;
+
+            height: 100%;
+        }
+
+        p {
+            font-size: 27px;
+        }
+
+        h1 {
+            font-size: 40px;
+        }
+
+        .bg-div-height-500 {
+            /* The image used */
+            background-image: url('https://images.unsplash.com/photo-1520709263767-af3cf65950da?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=e827c55968a596c967b3dba7eaa0d08a&auto=format&fit=crop&w=1234&q=80');
+            /* Full height */
+            height: 500px;
+            width: 100%;
+            /* Center and scale the image nicely */
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+
+        #bg-fill-container {
+            border: 0px solid black;
+            padding: 0px;
+            background-image: url('https://images.unsplash.com/photo-1499951360447-b19be8fe80f5?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=d1046925db0fb1f15417d71ad1676880&auto=format&fit=crop&w=1650&q=80');
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+
+        .bg-parallax {
+            /* The image used */
+            background-image: url('https://images.unsplash.com/photo-1462275646964-a0e3386b89fa?ixlib=rb-0.3.5&s=4e3c0975c4201232de905095d253ff0e&auto=format&fit=crop&w=2900&q=80');
+            /* Full height */
+            /* Create the parallax scrolling effect */
+            background-attachment: fixed;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+
+        .sidenav {
+            height: 100%;
+            width: 0;
+            position: fixed;
+            z-index: 1;
+            top: 0;
+            left: 0;
+            background-color: rgb(199, 199, 199);
+            overflow-x: hidden;
+            transition: 0.5s;
+            padding-top: 60px;
+        }
+
+        .sidenav a {
+            padding: 8px 8px 8px 32px;
+            text-decoration: none;
+            font-size: 25px;
+            color: #000;
+            display: block;
+            transition: 0.3s;
+        }
+
+        .sidenav a:hover {
+            color: #f1f1f1;
+        }
+
+        .sidenav .closebtn {
+            position: absolute;
+            top: 0;
+            right: 25px;
+            font-size: 36px;
+            margin-left: 50px;
+        }
+
+        #main {
+            transition: margin-left .5s;
+        }
+
+        @media screen and (max-height: 450px) {
+            .sidenav {
+                padding-top: 15px;
+            }
+            .sidenav a {
+                font-size: 18px;
+            }
+        }
+
+        /*Classes used to animate objects*/
+
+        .w3-animate-hover-zoom:hover {
+            -ms-transform: scale(1.5);
+            /* IE 9 */
+            -webkit-transform: scale(1.5);
+            /* Safari 3-8 */
+            transform: scale(1.5);
+        }
+
+        .w3-animate-pulse {
+            margin: 0px;
+            display: block;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: #cca92c;
+            cursor: pointer;
+            box-shadow: 0 0 0 rgba(204, 169, 44, 0.4);
+            animation: w3-animate-pulse 2s infinite;
+        }
+
+        .w3-animate-pulse:hover {
+            -ms-transform: scale(1.5);
+            /* IE 9 */
+            -webkit-transform: scale(1.5);
+            /* Safari 3-8 */
+            transform: scale(1.5);
+        }
+
+        @-webkit-keyframes w3-animate-pulse {
+            0% {
+                -webkit-box-shadow: 0 0 0 0 rgba(204, 169, 44, 0.4);
+            }
+            70% {
+                -webkit-box-shadow: 0 0 0 10px rgba(204, 169, 44, 0);
+            }
+            100% {
+                -webkit-box-shadow: 0 0 0 0 rgba(204, 169, 44, 0);
+            }
+        }
+
+        @keyframes w3-animate-pulse {
+            0% {
+                -moz-box-shadow: 0 0 0 0 rgba(204, 169, 44, 0.4);
+                box-shadow: 0 0 0 0 rgba(204, 169, 44, 0.4);
+            }
+            70% {
+                -moz-box-shadow: 0 0 0 10px rgba(204, 169, 44, 0);
+                box-shadow: 0 0 0 10px rgba(204, 169, 44, 0);
+            }
+            100% {
+                -moz-box-shadow: 0 0 0 0 rgba(204, 169, 44, 0);
+                box-shadow: 0 0 0 0 rgba(204, 169, 44, 0);
+            }
+        }
+
+        /*Custom backgrounds used to add opacity to backgrounds without affecting text*/
+
+        .first {
+            background: rgba(255, 255, 255, 0.3);
+        }
+
+        .second {
+            background: rgba(255, 255, 255, 0.6);
+        }
+
+        .third {
+            background: rgba(255, 255, 255, 0.9);
+        }
+
+        .fourth {
+            background: rgba(0, 0, 0, 0.5);
+        }
+
+        .fifth {
+            background: rgba(0, 0, 0, 0);
+        }
+
+        /*Classes used to modify buttons*/
+
+        .roundButton {
+            background-color: #ffffff;
+            border: none;
+            color: black;
+            padding: 16px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 22px;
+            margin: 0px 0px;
+        }
+
+        .roundButton1 {
+            border-radius: 0px;
+        }
+
+        .roundButton2 {
+            border-radius: 4px;
+        }
+
+        .roundButton3 {
+            border-radius: 8px;
+        }
+
+        .roundButton4 {
+            border-radius: 12px;
+        }
+
+        .roundButton5 {
+            border-radius: 50%;
+        }
+
+        .w3-top2,
+        .w3-bottom2 {
+            position: absolute;
+            width: 100%;
+            z-index: 1
+        }
+
+        .w3-top2 {
+            top: 0
+        }
+
+        .w3-bottom2 {
+            bottom: 0
+        }
+
+        a {
+            text-decoration: none
+        }
+
+        #main-content-bottom-margin {
+            margin-bottom: 96px;
+            /*This may to be adjusted depending on the content of your footer*/
+        }
+
+        #footer {
+            width: 100%;
+            position: fixed;
+            left: 0;
+            bottom: 0;
+            z-index: -3;
+            height: auto;
+        }
+
+        /* Style the tab */
+
+        .tab {
+            overflow: hidden;
+            border: 0px solid #FFD3D9;
+            background-color: #f1f1f1;
+        }
+
+        /* Style the buttons inside the tab */
+
+        .tab button {
+            background-color: inherit;
+            float: left;
+            border: none;
+            outline: none;
+            cursor: pointer;
+            padding: 14px 16px;
+            transition: 0.3s;
+            font-size: 17px;
+        }
+
+        /* Change background color of buttons on hover */
+
+        .tab button:hover {
+            background-color: #fff;
+        }
+
+        /* Create an active/current tablink class */
+
+        .tab button.active {
+            background-color: #FFD3D9;
+        }
+
+        /* Style the tab content */
+
+        .tabcontent {
+            display: none;
+            padding: 0px 0px;
+            -webkit-animation: fadeEffect 1s;
+            animation: fadeEffect 1s;
+        }
+
+        /* Fade in tabs */
+
+        @-webkit-keyframes fadeEffect {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        @keyframes fadeEffect {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        .navbarWidth {
+            max-width: 1200px;
+            margin: auto
+        }
+
+        .navbarWidthLarge {
+            max-width: 1300px;
+            margin: auto !important
+        }
+    </style>
+<div id="mySidenav" class="sidenav">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+        <a href="/Users/gustavorayos/Desktop/Visual Studio Projects/Samantha Rayos/index.html">Home</a>
+        <a href="/Users/gustavorayos/Desktop/Visual Studio Projects/Samantha Rayos/about.html">About Me</a>
+        <a href="/Users/gustavorayos/Desktop/Visual Studio Projects/Samantha Rayos/mywork.html">My Work</a>
+        <a href="/Users/gustavorayos/Desktop/Visual Studio Projects/Samantha Rayos/contact.html">Contact Me</a>
+        <a href="#">Blog</a>
+      </div>
+
+    <div id="main">
+
+
+
+
+
+
+
+        <div id='home' class='bg-div-height-500 w3-opacity-max'>
+        </div>
+
+        <div class='w3-display-container w3-top2' style='height:500px;'>
+
+
+            <div class='w3-display-middle w3-padding-large'>
+                <img alt='Avatar' class='w3-circle' src='https://2.bp.blogspot.com/-DIOvhZMyknc/WwYnXN747RI/AAAAAAAALcQ/1GlxEk1bhpkSp2dKtnbh8I9i1PYPNrOlACLcBGAs/s1600/Samantha_Avatar.png'
+                    style='width:250px;height:250px' />
+            </div>
+            <!--Large Screen Slider Text-->
+            <div class='w3-display-bottomleft w3-hide-small w3-hide-medium w3-center'>
+                <p class='w3-padding-large w3-text-pink'>
+                    <span style='font-size:90px;font-weight:bold;'>
+                        About me.
+                    </span>
+                </p>
+            </div>
+            <div class='w3-display-bottommiddle w3-padding-24'>
+                <a href='#aboutme'>
+                    <div class='w3-btn-floating w3-white w3-animate-pulse'>
+                        <i class='w3-xlarge fa fa-arrow-down'></i>
+                    </div>
+                </a>
+            </div>
+        </div>
+
+        <div class='w3-center w3-top2 w3-text-pink w3-hide-small' style='margin-top:12px;'>
+            <span style='font-size:70px;'>Samantha Rayos</span>
+        </div>
+
+        <div class='w3-center w3-top2 w3-text-pink w3-hide-large w3-hide-medium' style='margin-top:12px;'>
+            <span style='font-size:40px;'>Samantha Rayos</span>
+        </div>
+
+
+        <div style='margin-top:60px;margin-left:60px;' class='w3-top w3-hide-small w3-hide-medium'>
+ 
+                <div onclick="openNav()" class='w3-btn-floating w3-white w3-animate-pulse' style='width:100px;height:100px;'>
+                  <i style='position: relative;
+                  top: 50%;
+                  transform: translateY(-55%);font-size: 50px;' class='fa fa-bars'></i>
+                </div>
+        
+            </div>
+        
+            <div style='margin-top:100px;margin-left:20px;' class='w3-top w3-hide-small w3-hide-large'>
+         
+                <div onclick="openNav()" class='w3-btn-floating w3-white w3-animate-pulse' style='width:70px;height:70px;'>
+                  <i style='position: relative;
+                  top: 50%;
+                  transform: translateY(-55%);font-size: 40px;' class='fa fa-bars'></i>
+                </div>
+        
+            </div>
+        
+            <div style='margin-top:100px;margin-left:20px;' class='w3-top w3-hide-medium w3-hide-large'>
+         
+                <div onclick="openNav()" class='w3-btn-floating w3-white w3-animate-pulse' style='width:45px;height:45px;'>
+                  <i style='position: relative;
+                  top: 50%;
+                  transform: translateY(-55%);font-size: 30px;' class='fa fa-bars'></i>
+                </div>
+        
+            </div>
+
+
+
+
+
+
+
+        <div class='w3-light-gray'>
+            <div class="w3-pink tab">
+                <div>
+                    <button style='width:33.3%' class="tablinks w3-text-black " onclick="openCity(event, 'London')" id="defaultOpen">
+                        <span style='font-size: 26px;'>Family</span>
+                    </button>
+                    <button style='width:33.3%' class="tablinks w3-text-black " onclick="openCity(event, 'Paris')">
+                        <span style='font-size: 26px;'>Hobbies</span>
+                    </button>
+                    <button style='width:33.3%' class="tablinks w3-text-black " onclick="openCity(event, 'Tokyo')">
+                        <span style='font-size: 26px;'>Cities</span>
+                    </button>
+                </div>
+            </div>
+
+
+            <div class='w3-center'>
+                <div id="London" class="tabcontent">
+                    <div class='w3-padding-32 w3-padding-large w3-text-black' style='background-color: #FFD3D9;' id='aboutme'>
+                        <div class='w3-content w3-center w3-padding-16'>
+                            <h1 class='w3-center w3-padding-large'>
+                                <span style='font-weight:bold'>Family</span>
+                                <p>"You don't choose your family. They are God's gift to you, as you are to them." -Desmond Tutu</p>
+                        </div>
+                    </div>
+                    <div class='bg-parallax'>
+                        <div class='w3-padding-32 w3-padding-large w3-text-black' id='aboutme'>
+                            <div class='second w3-content w3-center w3-padding-16'>
+                                <h1 class='w3-center w3-padding-large'>
+                                    <span style='font-weight:bold'>
+                                        My husband.
+                                    </span>
+                                </h1>
+                                <div>
+                                    <img alt='Avatar' class='w3-circle' src='https://1.bp.blogspot.com/-lL6YhT9oRBA/WxQ2yXlo_fI/AAAAAAAAFvQ/6HBWJNs2GdchvLyyIxA5kObE__xkcagXACLcBGAs/s1600/IMG_0384.jpg'
+                                        style='width:250px;height:250px' />
+                                </div>
+
+                                <div class='w3-padding-small' style='margin-top:15px;'>
+                                    <p>
+                                        My husband's name is Gustavo Rayos. He's the love of my life. He is very sweet and kind, and keeps me motivated to do good.
+                                        We met in college and he graduated from New Mexico State Universitiy in 2015. He
+                                        is now a Systems Administrator in Amarillo, Texas where we live with our two dogs.
+                                    </p>
+                                </div>
+
+
+                            </div>
+                        </div>
+
+                        <div class='w3-padding-32 w3-padding-large w3-text-black' id='aboutme'>
+                            <div class='second w3-content w3-center w3-padding-16'>
+                                <h1 class='w3-center w3-padding-large'>
+                                    <span style='font-weight:bold'>
+                                        My dog Tex.
+                                    </span>
+                                </h1>
+                                <div>
+                                    <img alt='Avatar' class='w3-circle' src='https://3.bp.blogspot.com/-rpLaWewvhxM/WxQ4crhXVyI/AAAAAAAAFv0/IOzgnak3zjMyFBsQm28c9vLUSMS7rWLDQCLcBGAs/s1600/Tex.jpg'
+                                        style='width:250px;height:250px' />
+                                </div>
+
+                                <div class='w3-padding-small' style='margin-top:15px;'>
+                                    <p>
+                                        Tex is a Shih Tzu - Poodle mix and is one of the best dogs you'll ever meet. He has lots of energy and makes us laugh and
+                                        happy everyday. He loves to go on trips with us and go on adventures with us when
+                                        we can take him.
+                                    </p>
+                                </div>
+
+
+                            </div>
+                        </div>
+
+                        <div class='w3-padding-32 w3-padding-large w3-text-black' id='aboutme'>
+                            <div class='second w3-content w3-center w3-padding-16'>
+                                <h1 class='w3-center w3-padding-large'>
+                                    <span style='font-weight:bold'>
+                                        My dog Ranger.
+                                    </span>
+                                </h1>
+                                <div>
+                                    <img alt='Avatar' class='w3-circle' src='https://3.bp.blogspot.com/-b_zvcUAeRU4/WxQ4nERaGyI/AAAAAAAAFv4/EHnXgdCOL9E0TxmZboPjclnP6Pxlehm_gCLcBGAs/s1600/Ranger.jpg'
+                                        style='width:250px;height:250px' />
+                                </div>
+
+                                <div class='w3-padding-small' style='margin-top:15px;'>
+                                    <p>
+                                        Ranger is a short haired, bob-tailed Border Collie and is also a great dog. He is so strong and loves to go on walks, not
+                                        the best situation for us because he pulls on the leash so hard, but it's fun anyways.
+                                        Tex and Ranger are best friends and play all day together.
+                                    </p>
+                                </div>
+
+
+                            </div>
+                        </div>
+                    </div>
+                    </div>
+
+
+                    <div id="Paris" class="tabcontent">
+                            <div class='w3-padding-32 w3-padding-large w3-text-black' style='background-color: #FFD3D9;'>
+                                    <div class='w3-content w3-center w3-padding-16'>
+                                        <h1 class='w3-center w3-padding-large'>
+                                            <span style='font-weight:bold'>Hobbies</span>
+                                            <p>"My personal hobbies are reading, listening to music, and silence." -Edith Sitwell</p>
+                                    </div>
+                                </div>
+                                <div class='bg-parallax'>
+                                    <div class='w3-padding-32 w3-padding-large w3-text-black' id='aboutme'>
+                                        <div class='second w3-content w3-center w3-padding-16'>
+                                            <h1 class='w3-center w3-padding-large'>
+                                                <span style='font-weight:bold'>
+                                                    I love to color.
+                                                </span>
+                                            </h1>
+                                            <div>
+                                                <img alt='Avatar' class='w3-circle' src='https://2.bp.blogspot.com/-WZwpH24jYSs/WxQjcMVBCkI/AAAAAAAAFto/I_4DnmsIPAAKx6-m1suA8ILcLNrwK4Z4ACLcBGAs/s1600/leisy-vidal-455311-unsplash.jpg'
+                                                    style='width:250px;height:250px' />
+                                            </div>
+            
+                                            <div class='w3-padding-small' style='margin-top:15px;'>
+                                                <p>
+                                                    One of my favorite things to do is to color. Coloring is very relaxing to me, and I use it to destress at the end of a long day.
+                                                </p>
+                                            </div>
+            
+            
+                                        </div>
+                                    </div>
+
+                                    <div class='w3-padding-32 w3-padding-large w3-text-black' id='aboutme'>
+                                            <div class='second w3-content w3-center w3-padding-16'>
+                                                <h1 class='w3-center w3-padding-large'>
+                                                    <span style='font-weight:bold'>
+                                                        Walking and talking.
+                                                    </span>
+                                                </h1>
+                                                <div>
+                                                    <img alt='Avatar' class='w3-circle' src='https://4.bp.blogspot.com/-e_H5GRnwMKY/WxQlI_Qu5iI/AAAAAAAAFt0/fJuHzfDGt40F-BuxvXP-E5Uya6kO3LjUwCLcBGAs/s1600/jake-melara-30681-unsplash.jpg'
+                                                        style='width:250px;height:250px' />
+                                                </div>
+                
+                                                <div class='w3-padding-small' style='margin-top:15px;'>
+                                                    <p>
+                                                        I love to take walks with my family, and be able to catch up with what is going on in their lives. Walking allows me to exercise at
+                                                        the end of the day, and gives me time to talk to my husband and enjoy our time together. Our dogs join us to try to burn off some 
+                                                        of their energy (which is unlimited). 
+                                                    </p>
+                                                </div>
+                
+                
+                                            </div>
+                                        </div>
+
+
+                                        <div class='w3-padding-32 w3-padding-large w3-text-black' id='aboutme'>
+                                                <div class='second w3-content w3-center w3-padding-16'>
+                                                    <h1 class='w3-center w3-padding-large'>
+                                                        <span style='font-weight:bold'>
+                                                            Pinterest crafts.
+                                                        </span>
+                                                    </h1>
+                                                    <div>
+                                                        <img alt='Avatar' class='w3-circle' src='https://1.bp.blogspot.com/-b_eFuQYg080/WxQoGnxywKI/AAAAAAAAFuA/m6-_feX9IE0xOtGeRvwBJONpRtEe9_uJQCLcBGAs/s1600/vladimir-proskurovskiy-529247-unsplash.jpg'
+                                                            style='width:250px;height:250px' />
+                                                    </div>
+                    
+                                                    <div class='w3-padding-small' style='margin-top:15px;'>
+                                                        <p>
+                                                            We all know what Pinterest is, and I love Pinterest because it gives me ideas on crafts. I love being crafty and frugal and 
+                                                            Pinterest allows me to be both. Check out my <a class='w3-text-pink' target='_blank' href='https://www.pinterest.com/samanthaorayos/'>Pinterest</a> account if you have time to see what I've been up to. 
+                                                        </p>
+                                                    </div>
+                    
+                    
+                                                </div>
+                                            </div>
+
+
+                                </div>
+                            </div>
+
+                    <div id="Tokyo" class="tabcontent">
+                            <div class='w3-padding-32 w3-padding-large w3-text-black' style='background-color: #FFD3D9;'>
+                                    <div class='w3-content w3-center w3-padding-16'>
+                                        <h1 class='w3-center w3-padding-large'>
+                                            <span style='font-weight:bold'>Cities</span>
+                                            </h1>
+                                            <div class='w3-left-align'>
+                                            <h2><span style='font-weight: bold;font-size: 35px;'>hometown</span></h2>
+                                            <p>1. the town or city in which a person lives or was born, or from which a person comes.</p>
+                                            <p>2. of or relating to a hometown.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class='bg-parallax'>
+                                    <div class='w3-padding-32 w3-padding-large w3-text-black' id='aboutme'>
+                                        <div class='second w3-content w3-center w3-padding-16'>
+                                            <h1 class='w3-center w3-padding-large'>
+                                                <span style='font-weight:bold'>
+                                                    Las Cruces, New Mexico
+                                                </span>
+                                            </h1>
+                                            <div>
+                                                <img alt='Avatar' class='w3-circle' src='https://1.bp.blogspot.com/-a1ZeP6vaNLw/WxQtyPSa66I/AAAAAAAAFug/wmcNdmDIQj4PuWcVb1c4M6z43zbCyWrXACLcBGAs/s1600/anchor-lee-181403-unsplash.jpg'
+                                                    style='width:250px;height:250px' />
+                                            </div>
+            
+                                            <div class='w3-padding-small' style='margin-top:15px;'>
+                                                <p>
+                                                    Las Cruces, New Mexico is the city I was born in. I spent the first 16 years of my life there and I wouldn't have had it any other way. 
+                                                    It is a small town, but it treated us very well and there is plenty of things to do with your friends. There are outdoor activites, 
+                                                    sports, parks, movies, mall, etc. 
+                                                </p>
+                                            </div>
+            
+            
+                                        </div>
+
+                                        <div class='w3-padding-32 w3-padding-large w3-text-black' id='aboutme'>
+                                                <div class='second w3-content w3-center w3-padding-16'>
+                                                    <h1 class='w3-center w3-padding-large'>
+                                                        <span style='font-weight:bold'>
+                                                            Austin, Texas
+                                                        </span>
+                                                    </h1>
+                                                    <div>
+                                                        <img alt='Avatar' class='w3-circle' src='https://2.bp.blogspot.com/-n0hmcc56Fg4/WxQvQKRNb2I/AAAAAAAAFus/SO6ycbHde_Qpfs9typF1-4oB706tRy98wCLcBGAs/s1600/tomek-baginski-593896-unsplash.jpg'
+                                                            style='width:250px;height:250px' />
+                                                    </div>
+                    
+                                                    <div class='w3-padding-small' style='margin-top:15px;'>
+                                                        <p>
+                                                            When I was 16 years old, my mom, dad, and I moved to Austin, Texas. We relocated because of my dad's work. Although it was hard at first to adjust to high 
+                                                            school again and make friends, I loved that we moved to Austin. Austin is such an amazing place and it has so many things going for it. The weather is nice, 
+                                                            there are so many jobs, and there is so much to do ranging from outdoor activities, nightlife, music, and much more. My husband and I have made the commitment
+                                                            to one day get to Austin again. 
+                                                        </p>
+                                                    </div>
+                    
+                    
+                                                </div>
+
+
+
+                                    </div>
+
+                                    <div class='w3-padding-32 w3-padding-large w3-text-black' id='aboutme'>
+                                            <div class='second w3-content w3-center w3-padding-16'>
+                                                <h1 class='w3-center w3-padding-large'>
+                                                    <span style='font-weight:bold'>
+                                                        Amarillo, Texas
+                                                    </span>
+                                                </h1>
+                                                <div>
+                                                    <img alt='Avatar' class='w3-circle' src='https://2.bp.blogspot.com/-o8WSoTR2OIs/WxQya7RmmUI/AAAAAAAAFvE/_7CkmfcxGy0R5A0Js7HpFXVd8KHsJlsaQCLcBGAs/s1600/tia-jones-390114-unsplash.jpg'
+                                                        style='width:250px;height:250px' />
+                                                </div>
+                
+                                                <div class='w3-padding-small' style='margin-top:15px;'>
+                                                    <p>
+                                                        In December of 2015, my husband graduated college and got a really good job opportunity in Amarillo, Texas. We moved to Amarillo
+                                                        in January 2016 and are currently still here. It is our hometown now, and it has really treated us well the past couple of years.
+                                                        We have been able to start our lives and careers here, and have met a lot a great people here. It will always hold a place in our 
+                                                        hearts, even when our time in this city is done. 
+                                                    </p>
+                                                </div>
+                
+                
+                                            </div>
+
+
+
+                                </div>
+
+
+
+                                </div>
+                    </div>
+                </div>
+            </div> <!--End of light gray background for section-->
+
+
+
+            <!--Footer Code-->
+            <footer class='w3-pink' id='main-content-bottom-margin'>
+                <div class='w3-container w3-padding-32 w3-text-light-gray w3-center'>
+                    <div class='w3-content second w3-text-black'>
+                        <div class='w3-padding-small'>
+                            <h2>
+
+                                <span style='font-size:38px;'>About Me</span>
+                            </h2>
+                            <img alt='Avatar' class='w3-circle w3-margin-right' src='https://2.bp.blogspot.com/-DIOvhZMyknc/WwYnXN747RI/AAAAAAAALcQ/1GlxEk1bhpkSp2dKtnbh8I9i1PYPNrOlACLcBGAs/s1600/Samantha_Avatar.png'
+                                style='width:80px' />
+                            <p>
+                                <span style='font-size:22px'>
+                                        Hi! My name is Samantha Rayos and welcome to my website. I was born in New Mexico and now live in Texas with my husband and two dogs. I recently graduated from West Texas A&M University and I hope to start my professional career in marketing very soon! My hobbies include baking, cooking, Pinterest inspirations, and more. If you have any questions just shoot me a message on any medium.
+                                </span>
+                            </p>
+                        </div>
+                    </div>
+                    <div class='w3-padding-16 w3-center'>
+
+
+                        <div class='w3-third w3-container'>
+                            <h2 class='w3-text-white'>
+                                <span style='font-size:38px;'>Links</span>
+                            </h2>
+
+                            <p>
+                                    <a class='w3-hover-text-brown' href='/Users/gustavorayos/Desktop/Visual Studio Projects/Samantha Rayos/index.html'>
+                                      Home
+                                    </a>
+                                
+                                  <p>
+                                    <a class='w3-hover-text-brown' href='/Users/gustavorayos/Desktop/Visual Studio Projects/Samantha Rayos/about.html'>
+                                      About Me
+                                    </a>
+                                  </p>
+                                  <p>
+                                      <a class='w3-hover-text-brown' href='/Users/gustavorayos/Desktop/Visual Studio Projects/Samantha Rayos/mywork.html'>
+                                        My Work
+                                      </a>
+                                    </p>
+                                  <p>
+                                          <a class='w3-hover-text-brown' href='/Users/gustavorayos/Desktop/Visual Studio Projects/Samantha Rayos/contact.html'>
+                                            Contact Me
+                                          </a>
+                                        </p>
+          
+                                       <p>
+                                    <a class='w3-hover-text-brown' href='https://samantharayos.blogspot.com'>
+                                      Blog
+                                    </a>
+                                  </p>
+
+
+                        </div>
+                        <div class='w3-third w3-container'>
+                            <h2 class='w3-text-white'>
+                                <span style='font-size:38px;'>Contact Me</span>
+
+                            </h2>
+
+                            <div class='w3-center'>
+
+                                    <div class='w3-padding-small'>
+                                            <i class='w3-xxxlarge fa fa-phone-square'></i><br/>
+                                            <span style='font-size:24px;'>575-312-7209</span><br/>
+                                          </div>
+                                          
+                                          <div class='w3-padding-small'>
+                                            <i class='w3-xxxlarge fa fa-envelope'></i><br/>
+                                            <span style='font-size:24px;'>SamanthaORayos@Gmail.com</span><br/>
+                                          </div>
+          
+                                            <div class='w3-padding-small'>
+                                            <i class='w3-xxxlarge fa fa-road'></i><br/>
+                                            <span style='font-size:24px;'>Amarillo, TX</span>
+                                          </div>
+
+                            </div>
+
+                        </div>
+                        <div class='w3-third w3-container'>
+                            <h2 class='w3-text-white'>
+                                <span style='font-size:38px;'>Social</span>
+
+                            </h2>
+                            <div class='w3-xxxlarge'>
+                                    <a href='https://www.facebook.com/samantha.o.manjarrez'>
+                                        <i class='fa fa-facebook-official w3-hover-text-indigo'>
+                                        </i>
+                                      </a>
+                                      <a href='https://www.instagram.com/samanthamanjarrez_rayos/'>
+                                        <i class='fa fa-instagram w3-hover-text-pink'>
+                                        </i>
+                                      </a>
+                                      <a href='https://www.pinterest.com/samanthaorayos/'>
+                                        <i class='fa fa-pinterest-p w3-hover-text-red'>
+                                        </i>
+                                      </a>
+                                     <a href='https://www.linkedin.com/in/samanthaorayos/'>
+                                        <i class='fa fa-linkedin w3-hover-text-blue'>
+                                        </i>
+                                      </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </footer>
+            <div class='bg-parallax' id='footer'>
+                <div class='w3-padding-24 w3-center'>
+                    <a href='#home'>
+                        <div class='w3-btn-floating w3-black w3-animate-hover-zoom'>
+                            <i class='w3-xlarge fa fa-arrow-up'></i>
+                        </div>
+                    </a>
+                </div>
+            </div>
+
+
+
+
+
+
+
+
+        </div>
+        <!--End of main id-->
+
+
+
+
+
+        <script>
+            var x = document.getElementById('main');
+            function openNav() {
+                document.getElementById("mySidenav").style.width = "250px";
+                document.getElementById("main").style.marginLeft = "250px";
+            }
+
+            function closeNav() {
+                document.getElementById("mySidenav").style.width = "0";
+                document.getElementById("main").style.marginLeft = "0";
+            }
+        </script>
+        <script>
+            $(document).ready(function () {
+                // Add smooth scrolling to all links
+                $("a").on('click', function (event) {
+
+                    // Make sure this.hash has a value before overriding default behavior
+                    if (this.hash !== "") {
+                        // Prevent default anchor click behavior
+                        event.preventDefault();
+
+                        // Store hash
+                        var hash = this.hash;
+
+                        // Using jQuery's animate() method to add smooth page scroll
+                        // The optional number (800) specifies the number of milliseconds it takes to scroll to the specified area
+                        $('html, body').animate({
+                            scrollTop: $(hash).offset().top
+                        }, 800, function () {
+
+                            // Add hash (#) to URL when done scrolling (default click behavior)
+                            window.location.hash = hash;
+                        });
+                    } // End if
+                });
+            });
+        </script>
+        <script>
+            function openCity(evt, cityName) {
+                var i, tabcontent, tablinks;
+                tabcontent = document.getElementsByClassName("tabcontent");
+                for (i = 0; i < tabcontent.length; i++) {
+                    tabcontent[i].style.display = "none";
+                }
+                tablinks = document.getElementsByClassName("tablinks");
+                for (i = 0; i < tablinks.length; i++) {
+                    tablinks[i].className = tablinks[i].className.replace(" active", "");
+                }
+                document.getElementById(cityName).style.display = "block";
+                evt.currentTarget.className += " active";
+            }
+        </script>
+
+
+        <script>
+            // Get the element with id="defaultOpen" and click on it
+            document.getElementById("defaultOpen").click();
+        </script>
+</body>
+
+</html>
